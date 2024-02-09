@@ -40,9 +40,11 @@ class Activity
         DateTime stopTime = present.AddSeconds(_activityDuration);
 
         Console.Write("|                            |");
-        Console.SetCursorPosition(1, 0);
         while (DateTime.Now < stopTime)
         {
+            Console.SetCursorPosition(0, 1);
+            Console.Write("Breathe In... ");
+            Console.SetCursorPosition(1, 0);
             for (int i = 0; i < 16; i++)
             {
                 Console.Write(">");
@@ -65,6 +67,9 @@ class Activity
             }
             if (DateTime.Now > stopTime)    {break;}
             Thread.Sleep(2000);
+            Console.SetCursorPosition(0, 1);
+            Console.WriteLine("Breathe Out...");
+            Console.SetCursorPosition(29, 0);
             if (DateTime.Now > stopTime)    {break;}
             for (int i = 0; i < 20; i ++)
             {
