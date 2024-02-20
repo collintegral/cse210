@@ -5,9 +5,9 @@ static class JsonHandler
     const string _filePath = "savedata.json";
     static readonly JsonSerializerOptions options = new() {WriteIndented = true, IncludeFields = true};
 
-    public static void SaveData(List<Party> parties)
+    public static void SaveData()
     {
-        File.WriteAllText(_filePath, JsonSerializer.Serialize(parties, options));
+        File.WriteAllText(_filePath, JsonSerializer.Serialize(Program._parties, options));
     }
 
     public static void LoadData()
